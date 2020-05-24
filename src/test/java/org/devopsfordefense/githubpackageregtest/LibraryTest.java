@@ -22,7 +22,7 @@ class LibraryTest {
 
     @Test void testgetBooks() {
         Library classUnderTest = new Library();
-        
+        assertTrue(classUnderTest.getBooks().length() == 0);
         classUnderTest.addBook("Hamlet", "Shakespear");
         assertTrue(classUnderTest.getBooks().contains("Hamlet"));
         assertTrue(classUnderTest.getBooks().contains("Shakespear"));
@@ -34,5 +34,18 @@ class LibraryTest {
         assertTrue(classUnderTest.getBooks().contains("\n"));
         assertTrue(classUnderTest.getBooks().contains("Moby Dick"));
         assertTrue(classUnderTest.getBooks().contains("Herman Melvile"));
+    }
+
+    @Test void testgetAuthors() {
+        Library classUnderTest = new Library();
+        assertTrue(classUnderTest.getAuthors().length() == 0);
+        classUnderTest.addBook("Hamlet", "Shakespear");
+        assertTrue(classUnderTest.getAuthors().contains("Shakespear"));
+        assertFalse(classUnderTest.getAuthors().contains("\n"));
+        
+        classUnderTest.addBook("Moby Dick", "Herman Melvile");
+        assertTrue(classUnderTest.getAuthors().contains("Shakespear"));
+        assertTrue(classUnderTest.getAuthors().contains("\n"));
+        assertTrue(classUnderTest.getAuthors().contains("Herman Melvile"));
     }
 }

@@ -33,7 +33,7 @@ publishing {
         GitHubPackageRegTest(MavenPublication) {
             groupId = "org.devopefordefense"
             artifactId = "GitHubPackageRegTest"
-            version = "0.1"
+            version = "0.2.0"
             from(components.java)
         }
     }

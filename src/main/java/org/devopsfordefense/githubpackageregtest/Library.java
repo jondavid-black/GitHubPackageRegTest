@@ -52,4 +52,19 @@ public class Library {
 
         return retVal.toString();
     }
+
+    public String getAuthors() {
+        StringBuffer retVal = new StringBuffer();
+
+        boolean first = true;
+        for (String author : bookAuthor.values()) {
+            if (first) {
+                first = false;
+            } else {
+                retVal.append("\n");
+            }
+            retVal.append(author);
+        }
+        return retVal.toString();
+    }
 }
